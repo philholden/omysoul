@@ -3,6 +3,7 @@ var express = require('express')  // eslint-disable-line no-var
 var webpack = require('webpack')  // eslint-disable-line no-var
 var config = require('./webpack.config.dev') // eslint-disable-line no-var
 var compression = require('compression') // eslint-disable-line no-var
+var ssbKeys = require('ssb-keys')
 
 // var requestProxy = require('express-request-proxy')
 // var objectAssign = require('object-assign')
@@ -26,6 +27,10 @@ app.use(compression({
 }))
 
 app.use('/', express.static('.'))
+app.get('/keys/', (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify(require('ssb-keys').generate()))
+})
 
 // app.all('*', function(req, res, next) {
 //   var url = require('url').parse(req.url)
