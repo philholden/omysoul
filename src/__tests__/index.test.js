@@ -4,7 +4,6 @@ import React from 'react'
 import { createRenderer } from 'react-addons-test-utils'
 import expect from 'expect'
 import expectJSX from 'expect-jsx'
-import { HelloWorld } from '../App'
 
 expect.extend(expectJSX)
 
@@ -20,16 +19,3 @@ test('1 is in array', t => {
   )
 })
 
-test('MyComponent default render', () => {
-  const renderer = createRenderer()
-
-  renderer.render(
-    <HelloWorld />
-  )
-  expect(
-    renderer.getRenderOutput()
-  )
-  .toEqualJSX(
-    <div>Hello World.</div>
-  )
-})
