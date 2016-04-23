@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import SongItemContainer from './song-item-container'
 import {
   putSongInSongStore
-} from '../actions/index'
+} from '../song-store-actions'
 
 
 const AddSongForm = ({

@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './components/App'
-import rootReducer from './reducers/index'
+import App from './app/components/app'
+import rootReducer from './app/root-reducer'
 import { generateKeys } from './api'
-import * as _actions from './actions/index'
-import { sagaMiddleware } from './sagas'
+import * as _actions from './song-store/song-store-actions'
+import sagaMiddleware from './app/saga-middleware'
 import { bindActionCreators } from 'redux'
 
 import {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
   addSongStore
-} from '../actions/index'
+} from '../song-store-actions'
 
 
 const SongStoreSync = ({

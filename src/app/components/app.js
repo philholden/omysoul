@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import SongStoreListContainer from './song-store-list-container'
-
+import SongStoreListContainer
+  from '../../song-store/components/song-store-list-container'
 
 class App extends Component {
   render() {

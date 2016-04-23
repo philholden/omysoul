@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import {
   removeSongFromSongStore
-} from '../actions/index'
+} from '../song-store-actions'
 
 const SongItem = ({ song, onRemove }) => {
   return (

@@ -4,7 +4,7 @@ import SongListContainer from './song-list-container'
 
 import {
   removeSongStore
-} from '../actions/index'
+} from '../song-store-actions'
 
 const SongStoreItem = ({ name, keys, id, onRemove }) => {
   return (

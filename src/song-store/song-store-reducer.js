@@ -1,25 +1,9 @@
 import {
-  ADD_SONG_STORE,
   ADD_SONG_STORE_SUCCEEDED,
   REMOVE_SONG_STORE_SUCCEEDED,
   PUT_SONG_IN_SONG_STORE,
   REMOVE_SONG_FROM_SONG_STORE
-} from '../actions/index'
-
-export function root(state = {}, action) {
-  switch (action.type) {
-    case ADD_SONG_STORE:
-    case REMOVE_SONG_STORE:
-    case PUT_SONG_IN_SONG_STORE:
-    case REMOVE_SONG_FROM_SONG_STORE:
-      return {
-        ...state,
-        songStores: songStores(state.songStores, action)
-      }
-    default:
-      return state
-  }
-}
+} from './song-store-actions'
 
 export default function songStores(state = {}, action) {
   switch (action.type) {

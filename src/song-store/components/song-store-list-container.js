@@ -5,7 +5,7 @@ import SongStoreSyncContainer from './song-store-sync-container'
 import SongStoreItemContainer from './song-store-item-container'
 import {
   addSongStore
-} from '../actions/index'
+} from '../song-store-actions'
 
 const SongStoreList = ({
   songStores
