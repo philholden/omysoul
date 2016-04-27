@@ -1,0 +1,6 @@
+export const ADD = 'song-store/ADD'
+export const REMOVE = 'song-store/REMOVE'
+export const PUT_SONG = 'song-store/PUT_SONG'
+export const REMOVE_SONG = 'song-store/REMOVE_SONG'
+export const ADD_SUCCEEDED = 'song-store/ADD_SONG_SUCCEEDED'
+export const REMOVE_SUCCEEDED = 'song-store/REMOVE_SONG_SUCCEEDED'

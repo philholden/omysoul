@@ -73,6 +73,7 @@
     "nodemon": "^1.8.1",
     "nyc": "^5.3.0",
     "react-addons-test-utils": "^0.14.6",
+    "react-router": "^2.3.0",
     "redux": "^3.4.0",
     "redux-saga": "^0.9.5",
     "rimraf": "^2.4.3",

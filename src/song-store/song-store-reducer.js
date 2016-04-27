@@ -8,11 +8,9 @@ import {
 export default function songStores(state = {}, action) {
   switch (action.type) {
     case ADD_SONG_STORE_SUCCEEDED:
-      console.log(action, action.swarmLogMeta.id,action.swarmLogMeta)
       return {
         ...state,
         [action.swarmLogMeta.id]: {
-//          id: action.songStoreId,
           swarmLogMeta: { ...action.swarmLogMeta },
           songs: {}
         }
@@ -46,7 +44,6 @@ function songStore(state = {}, action) {
       }
     case REMOVE_SONG_FROM_SONG_STORE: {
       delete songs[action.songId]
-//      console.log(`delete ${action.id}` + songs)
       return { ...state, songs }
     }
     default:

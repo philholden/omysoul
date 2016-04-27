@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import FullScreenFlex from '../lib/full-screen-flex'
 import SongStoreListContainer
   from '../../song-store/components/song-store-list-container'
 
-class App extends Component {
+export const hello = 'hello'
+export default class App extends Component {
   render() {
+  console.log('render', this.props)
     return (
       <div>
+      <FullScreenFlex>
+        { this.props.children }
+      </FullScreenFlex>
       <SongStoreListContainer />
       <pre>
         {
@@ -18,5 +23,3 @@ class App extends Component {
     )
   }
 }
-
-export default connect(state => ({ state }))(App)

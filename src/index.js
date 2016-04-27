@@ -1,12 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './app/components/app'
+import App from './components/app/app'
 import rootReducer from './app/root-reducer'
 import { generateKeys } from './api'
 import * as _actions from './song-store/song-store-actions'
 import sagaMiddleware from './app/saga-middleware'
 import { bindActionCreators } from 'redux'
+import { routes, history } from './components/app/routes'
+import {
+  Router
+} from 'react-router'
 
 import {
   createStore,
@@ -54,7 +58,9 @@ getSwarmLogsFromDb()
 
 render(
   <Provider store={store}>
-    <App />
+    <div>
+      <Router history={history} routes={routes} />
+    </div>
   </Provider>,
   document.getElementById('root')
 )
