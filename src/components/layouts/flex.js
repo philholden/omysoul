@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Radium from 'radium'
 
-export const FullScreen = Radium(({
+export const FullScreen = ({
   children,
   flex,
   style,
@@ -20,16 +20,16 @@ export const FullScreen = Radium(({
   ]
 
   return (
-    <div
+    <Element
       style={ _styles.concat(style) }
       {...rest}
     >
       { children }
-    </div>
+    </Element>
   )
-})
+}
 
-export const Row = Radium(({
+export const Row = ({
   children,
   style,
   align,
@@ -45,16 +45,16 @@ export const Row = Radium(({
   ]
 
   return (
-    <div
+    <Element
       style={ _styles.concat(style) }
       {...rest}
     >
       { children }
-    </div>
+    </Element>
   )
-})
+}
 
-export const Col = Radium(({
+export const Col = ({
   children,
   style,
   align,
@@ -73,14 +73,36 @@ export const Col = Radium(({
   ]
 
   return (
-    <div
+    <Element
       style={ _styles.concat(style)}
       {...rest}
     >
       { children }
-    </div>
+    </Element>
   )
-})
+}
+
+class _Element extends Component {
+  static defaultProps = {
+    element: 'div'
+  };
+
+  render() {
+    const {
+      element,
+      children,
+      ...rest
+    } = this.props
+
+    return React.createElement(
+      element,
+      rest,
+      children
+    )
+  }
+}
+
+export const Element = Radium(_Element)
 
 const rowAlignItems = numpad => [
   'flex-start',

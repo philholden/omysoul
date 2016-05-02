@@ -16,8 +16,12 @@ import {
 import {
   List,
   Item,
-  ItemSongStores
+  ItemInSongStores
 } from '../layouts/list'
+
+import {
+  NavBarSongStore
+} from '../layouts/nav-bar'
 
 import Button from '../lib/button'
 
@@ -39,8 +43,7 @@ export default class App extends Component {
       <div>
         <FullScreen flex="row">
           {
-            ' '
-           // this.props.children
+           this.props.children
           }
         </FullScreen>
         <SongStoreListContainer />
@@ -51,12 +54,10 @@ export default class App extends Component {
         </pre>
         <FullScreen flex={'row'}>
           <Card>
-            <NavBar>
-              nav bar
-            </NavBar>
+            <NavBarSongStore />
             <List>
-              <ItemSongStores isFirst={true}>Item 1 dfjhsdkjhf dfjhsakdjfhaksdjfhkjsdhfkasjhdfkads fkj fasjdhf kjashdfkjsahdf kjashd jsd fkjashd fk</ItemSongStores>
-              <ItemSongStores>Item 2</ItemSongStores>
+              <ItemInSongStores isFirst={true}>Item 1 dfjhsdkjhf dfjhsakdjfhaksdjfhkjsdhfkasjhdfkads fkj fasjdhf kjashdfkjsahdf kjashd jsd fkjashd fk</ItemInSongStores>
+              <ItemInSongStores>Item 2</ItemInSongStores>
             </List>
             <ButtonBar>
               <Button group={true}>Button 1</Button>

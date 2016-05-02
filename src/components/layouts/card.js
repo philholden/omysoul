@@ -1,11 +1,10 @@
 import React from 'react'
 import { Row, Col } from './flex'
-import Radium from 'radium'
 import * as COLOR from  '../../app/color-consts'
 import * as NUMBER from '../../app/number-consts'
 
 
-export const Card = Radium(({
+export const Card = ({
   children,
   style,
   ...rest
@@ -26,9 +25,9 @@ export const Card = Radium(({
       { children }
     </Col>
   )
-})
+}
 
-export const NavBar = Radium(({
+export const NavBar = ({
   children,
   style,
   ...rest
@@ -49,9 +48,9 @@ export const NavBar = Radium(({
       { children }
     </Row>
   )
-})
+}
 
-export const Body = Radium(({
+export const Body = ({
   children,
   style,
   ...rest
@@ -71,9 +70,9 @@ export const Body = Radium(({
       { children }
     </Row>
   )
-})
+}
 
-export const ButtonBar = Radium(({
+export const ButtonBar = ({
   children,
   style,
   ...rest
@@ -82,7 +81,11 @@ export const ButtonBar = Radium(({
     {
       alignItems: 'center',
       justifyContent: 'space-around',
-      padding: NUMBER.BUTTON_BAR_MARGIN
+      paddingLeft: NUMBER.PAGE_MARGIN_X - NUMBER.BUTTON_BAR_MARGIN,
+      paddingRight: NUMBER.PAGE_MARGIN_X - NUMBER.BUTTON_BAR_MARGIN,
+      paddingTop: NUMBER.BUTTON_BAR_MARGIN,
+      paddingBottom: NUMBER.BUTTON_BAR_MARGIN
+
     }
   ]
 
@@ -94,4 +97,4 @@ export const ButtonBar = Radium(({
       { children }
     </Row>
   )
-})
+}

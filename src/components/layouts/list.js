@@ -3,6 +3,7 @@ import { Row, Col } from './flex'
 import { Body } from './card'
 import Radium from 'radium'
 import * as COLOR from  '../../app/color-consts'
+import * as NUMBER from  '../../app/number-consts'
 
 
 export const List = Radium(({
@@ -35,7 +36,9 @@ export const Item = Radium(({
 }) => {
   const _styles = [
     {
-      backgroundColor: COLOR.LIST_ITEM
+      backgroundColor: COLOR.LIST_ITEM,
+      paddingLeft: NUMBER.PAGE_MARGIN_X,
+      paddingRight: NUMBER.PAGE_MARGIN_X,
     },
     !isFirst &&
     {
@@ -53,10 +56,9 @@ export const Item = Radium(({
   )
 })
 
-export const ItemSongStores = Radium(({
-  children,
+export const ItemInSongStores = Radium(({
+  name,
   style,
-  isFirst,
   ...rest
 }) => {
   const _styles = [
@@ -71,17 +73,14 @@ export const ItemSongStores = Radium(({
       style={ _styles.concat(style) }
       {...rest}
     >
-      <Col align="5">a</Col>
       <Col style={styles.colTitle}>
         <div style={styles.title}>
-          { children }
+          { name }
         </div>
         <div style={styles.subtitle}>
           subtitle
         </div>
       </Col>
-      <Col align="5">b</Col>
-
     </Item>
   )
 })
