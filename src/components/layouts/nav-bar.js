@@ -9,6 +9,7 @@ import * as Icon from '../lib/icons'
 export const NavBarSongStore = ({
   children,
   style,
+  onBack,
   ...rest
 }) => {
   const _styles = [
@@ -24,7 +25,7 @@ export const NavBarSongStore = ({
       style={ _styles.concat(style) }
       {...rest}
     >
-      <Back />
+      <Back onClick={onBack}/>
       <SearchBox />
       { children }
     </NavBar>
@@ -46,14 +47,23 @@ export const SearchBox = ({ onSubmit }) => (
   </Col>
 )
 
-export const Back = () => (
-  <Col style={styles.back}><Icon.Back /></Col>
+export const Back = ({ ...rest }) => (
+  <Col
+    style={styles.back}
+    align="5"
+    { ...rest }
+  >
+    <Icon.Back />
+  </Col>
 )
 
 const styles = {
   back: {
-    marginRight: 10,
-    marginLeft: -2
+    paddingRight: 10,
+    marginLeft: -NUMBER.PAGE_MARGIN_X,
+    paddingLeft: NUMBER.PAGE_MARGIN_X - 2,
+    cursor: 'pointer',
+    alignSelf: 'stretch'
   },
   iconWrapper: {
     paddingLeft: 5,

@@ -8,7 +8,7 @@ import {
 } from 'react-router'
 
 import SongStoreNavScreen from '../song-store/song-store-nav-screen'
-import SongStoreSongsNavScreen from '../song-store/song-store-songs-nav-screen'
+import SongStoreSongsNavScreen from '../song-store-songs/song-store-songs-nav-screen'
 const App = require('./app').default
 
 console.log('app', App)

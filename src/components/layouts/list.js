@@ -57,7 +57,7 @@ export const Item = Radium(({
 })
 
 export const ItemInSongStores = Radium(({
-  name,
+  title,
   style,
   ...rest
 }) => {
@@ -75,7 +75,7 @@ export const ItemInSongStores = Radium(({
     >
       <Col style={styles.colTitle}>
         <div style={styles.title}>
-          { name }
+          { title }
         </div>
         <div style={styles.subtitle}>
           subtitle

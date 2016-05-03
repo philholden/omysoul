@@ -1,5 +1,5 @@
 import React from 'react'
-import Radium from 'radium'
+import { withRouter } from 'react-router'
 import SongStoreListContainer from './song-store-list-container'
 import {
   Card,
@@ -11,16 +11,14 @@ import {
   NavBarSongStore
 } from '../layouts/nav-bar'
 
-const SongStoreNavScreen = ({ history }) => {
-
-  const onClick = () => history.push('/songstore/1')
+const SongStoreNavScreen = ({ router }) => {
 
   return (
     <Card>
       <NavBarSongStore title={'Song Stores'}/>
       <SongStoreListContainer />
       <ButtonBar>
-        <Button onClick={onClick}>
+        <Button>
           Add Song Store
         </Button>
       </ButtonBar>
@@ -28,4 +26,4 @@ const SongStoreNavScreen = ({ history }) => {
   )
 }
 
-export default SongStoreNavScreen
+export default withRouter(SongStoreNavScreen)
