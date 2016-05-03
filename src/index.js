@@ -1,13 +1,14 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { render, unmountComponentAtNode } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './components/app/app'
 import rootReducer from './app/root-reducer'
 import { generateKeys } from './api'
 import * as _actions from './song-store/song-store-actions'
 import sagaMiddleware from './app/saga-middleware'
 import { bindActionCreators } from 'redux'
-import { routes, history } from './components/app/routes'
+import routes from './components/app/routes'
+import { hashHistory } from 'react-router'
+
 import {
   Router
 } from 'react-router'
@@ -56,14 +57,26 @@ getSwarmLogsFromDb()
     }
   })
 
-render(
-  <Provider store={store}>
-    <div>
-      <Router history={history} routes={routes} />
-    </div>
-  </Provider>,
-  document.getElementById('root')
-)
+if (module.hot) {
+  module.hot.accept('./components/app/routes', () => {
+    let routes = require('./components/app/routes').default
+    unmountComponentAtNode(document.getElementById('root'))
+    start(routes)
+  })
+}
+
+const start = (routes) => {
+  render(
+    <Provider store={store}>
+      <div>
+        <Router history={hashHistory} routes={routes} />
+      </div>
+    </Provider>,
+    document.getElementById('root')
+  )
+}
+
+start(routes)
 
 function logSampleActions({ id, keys, name }) {
   console.log(

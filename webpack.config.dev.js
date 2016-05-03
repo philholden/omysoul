@@ -13,6 +13,7 @@ module.exports = {
 
   entry:{
     bundle: [
+      'react-hot-loader/patch',
       'babel-polyfill',
       'eventsource-polyfill', // necessary for hot reloading with IE
       'webpack-hot-middleware/client',

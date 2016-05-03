@@ -25,17 +25,9 @@ import {
 
 import Button from '../lib/button'
 
-console.log(
-  // Card,
-  // Body,
-  // ButtonBar,
-  // NavBar
-)
-
 import SongStoreListContainer
   from '../../song-store/components/song-store-list-container'
 
-export const hello = 'hello'
 export default class App extends Component {
   render() {
   console.log('render', this.props)
